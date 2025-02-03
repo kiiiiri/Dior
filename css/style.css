@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+/* Reset CSS */
+* { margin: 0; padding: 0;}
+img { border: 0;}
+ol,ul { list-style: none; }
+a { outline:0; text-decoration:none; color:#bbb;}
+body { position:fixed;  width:100%; height:100%; background:#ffffff;}
+
+
+/* 메인 로고 애니메이션 */
+#mainlogo { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index:10;  animation: movelogo 2.2s ease-in;;  } 
+#mainlogo img { width: 100px;}
+@keyframes movelogo { 
+    0% { top: 48%; left: 48%; transform: scale(2,2);}
+    100% { top: 20px;}
+}
+
+/* 기타 헤더 */
+#anotherlogo { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10;}
+#anotherlogo img { width: 100px;}
+
+/* 배경 비디오  */
+.vid { width:100%; height:100%; position:fixed; left:0px; opacity:0.9; animation: videoAni 3s; }
+.vid video { width:100%; min-width:1600px; }
+@keyframes videoAni{
+    0%{opacity: 0;}
+    75%{opacity: 0;}
+    100%{opacity: 0.9;}
+}
+
+/* 메뉴, 헤더 관련 애니메이션 */
+@keyframes headerAni{
+    0%{opacity: 0;}
+    80%{opacity: 0;}
+    81%{opacity: 1;}
+    100%{opacity: 1;}
+}
+/* 헤더 */
+header {width: 100%; height: 80px; position: fixed; top: 0; background: white; } 
+.header { animation: headerAni 3s;}
+button{ border: none; background: transparent;} 
+input{ border: none; border-bottom: 2px solid #747474; background: transparent; outline: none; width: 150px;}
+
+#user a:hover i{transform: scale(1.2);}
+#user label:hover i{transform: scale(1.2);}
+
+#user { position: absolute; top: 30px; right: 0px;}
+#user i{color: #595959; font-size: 19px;}
+#user label{margin-right: 30px;}
+#user a{margin-right: 30px;}
+
+#searchform {position: absolute; left: -175px; top: 0px; display: none;}
+#search { width: 0; height: 0;}
+#searchform button { margin-right: 10px;}
+#searchform button i {color: #747474; font-size: 15px;}
+
+#search:checked ~ #searchform{display: block;}
+#searchform button:hover i{transform: scale(1.2);}
+
+
+/* 메뉴 아이콘 */
+.menu {position: fixed; left: 30px; top: 30px; animation: headerAni 3s; color: #595959; }
+.anothermenu {position: fixed; left: 30px; top: 30px; color: #595959; }
+
+/* sns */
+#sns {position: absolute;  bottom: 40px; left: 40px;}
+#sns li { float: left; margin-right: 40px; }
+#sns .fa-brands { font-size: 25px; color: rgb(255, 255, 255); opacity: 0.8;}
+#sns .fa-brands:hover { transform: scale(1.3); opacity: 1;}
+
+/* 사이드 메뉴 */
+
+#sideMenu { position: fixed; background: #222; color: #bbb; width: 300px; height: 100%; top: 0px; left:-300px; 
+            text-align: center; opacity: 0.95; transition: all 1.3s;}
+#side li{margin-bottom: 10px; padding: 10px; font-size: 20px; 
+         font-family: "Titillium Web", serif; font-weight: 600; font-style: normal; filter: none;
+         transition: filter 0.3s ; }
+
+/* #side 메뉴에 마우스를 올리면 그 항목만 선명하고 나머지 항목은 블러 처리 */
+#side>li:hover {filter: none; transform: scale(1.2); }
+/* #side 요소가 hover 되었을 때, hover되지 않은 항목들에만 블러 효과 적용 */
+#side:hover>li:not(:hover) {filter: blur(3px);}
+#side li:hover a {color: #ffffff; }
+
+#xicon { text-align: right; padding: 20px; } 
+#xicon i {font-size: 25px;}
+#xicon .fa-solid:hover {transform: scale(1.2);}
+#checkbox:checked ~ #sideMenu{ left: 0; }
+
+/* 체크박스를 지우기 */
+#checkbox { width: 0; height: 0;}
+
